@@ -28,12 +28,12 @@ selectedDest = ""
 distance = 0  
   handleSource = selectedSource => {
     this.selectedSource = selectedSource
-    console.log(this.selectedSource)
+    console.log(this.selectedSource.label)
   };
 
   handleDest = selectedDest => {
     this.selectedDest = selectedDest
-    console.log(this.selectedDest)
+    console.log(this.selectedDest.label)
   };
 
   calculateCost= () => {
@@ -42,6 +42,9 @@ distance = 0
     }
     else if(this.selectedDest==""){
         alert('Destination Not Avaialable. Please enter destination')
+    }
+    else if(this.selectedSource.label==this.selectedDest.label){
+        alert('Source and Destination cannot be the same')
     }
     else{
         let x = this.selectedDest.value[0] - this.selectedSource.value[0]
